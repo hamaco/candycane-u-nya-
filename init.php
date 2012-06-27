@@ -1,13 +1,13 @@
 <?php
 
 $pluginContainer = ClassRegistry::getObject('PluginContainer');
-$pluginContainer->installed('cc_u-nya-', '0.1');
+$pluginContainer->installed('cc_u-nya-', '0.2');
 
 App::uses('CakeEventManager', 'Event');
 CakeEventManager::instance()->attach(function ($event)
   {
     $i = 0;
-    $event->result['text'] = preg_replace_callback("/u-nya-/", function ($matches) use (&$i) {
+    $event->data['text'] = $event->result['text'] = preg_replace_callback("/u-nya-/", function ($matches) use (&$i) {
       $i++;
       return <<<EOM
 <span id="cc-u-nya-$i"></span><script>
