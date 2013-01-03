@@ -1,7 +1,7 @@
 <?php
 
 $pluginContainer = ClassRegistry::getObject('PluginContainer');
-$pluginContainer->installed('cc_u-nya-', '0.2');
+$pluginContainer->installed('cc_u-nya-', '0.2.0');
 
 App::uses('CakeEventManager', 'Event');
 CakeEventManager::instance()->attach(function ($event)
